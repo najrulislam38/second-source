@@ -1,0 +1,22 @@
+.container {
+  width: 1200px;
+  margin: auto;
+}
+
+.users-area {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.users-area li{
+  list-style: none;
+  border: 1px solid black;
+  text-align: center;
+  padding: 8px;
+  margin: 2px;
+}
+
+h1 {
+  text-align: center;
+}
