@@ -72,3 +72,41 @@ console.log(result); // Output: 8
 #### Q8. What is the event loop in javascript? explain with a brief example.
 
 The event loop is a mechanism that enables asynchronous operations to be executed in a non-blocking manner. Understanding the event loop is essential for developing web applications because it underpins the asynchronous nature of JavaScript, which is fundamental for building responsive and efficient web applications.
+
+#### Q10. explain the difference between props and state in React. Provide Examples
+
+**Props:** Props are used to pass data from a parent component to a child component. Unlike state, props are immutable, meaning they cannot be modified within the receiving component.
+
+**State: ** State is a built-in object in React components that holds data or information about the component. It is mutable, which means it can be updated within the component using the setState method in class components or the useState hook in functional components.
+
+```js
+"State"
+import React, { useState } from 'react';
+
+function Counter() {
+    const [count, setCount] = useState(0);
+
+    return (
+        <div>
+            <p>Count: {count}</p>
+            <button onClick={() => setCount(count + 1)}>Increment</button>
+        </div>
+    );
+}
+
+export default Counter;
+
+"Props"
+
+
+function Hello({ name }) {
+    return <h1>Hello, {name}!</h1>;
+}
+
+function App() {
+    return <Hello name="Raihan" />;
+}
+
+export default App;
+
+```
