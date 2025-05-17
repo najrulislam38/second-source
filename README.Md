@@ -32,3 +32,43 @@ The z-index property specifies the stack order of an element. An element with gr
   opacity: 0.9;
 }
 ```
+
+#### Q5. Explain tha defference between == and === in javascript
+
+**== (Equal to):** This operator checks for equality of value after performing type coercion if necessary. It means that if the operands have different types, JavaScript will attempt to convert them to a common type before making the comparison.
+
+**=== (Strict equal to):** This operator checks for both equality of value and equality of type without performing any type coercion. It means that if the operands have different types, they are considered unequal, regardless of their values.
+
+```js
+"use ==";
+5 == "5"; // true (string converted to number)
+true == 1; // true (boolean converted to number)
+null == undefined; // true (special case)
+
+("use ===");
+5 === 5; // true
+"5" === 5; // false (string vs number)
+true === 1; // false (boolean vs number)
+null === undefined; // false
+```
+
+#### Q6. what are closures? provide a simple example.
+
+A closure in JavaScript is a function's ability to remember and access its surrounding state even after the outer function has finished executing. This means an inner function retains access to the variables of its outer function, even when the outer function is no longer in scope.
+
+```js
+function firstFunction(x) {
+  function secondFunction(y) {
+    return x + y;
+  }
+  return secondFunction;
+}
+
+const addAmount = firstFunction(5); // Creates a closure, add5 remembers x = 5
+const result = add5(3); // Accesses x from the closure and returns 5 + 3 = 8
+console.log(result); // Output: 8
+```
+
+#### Q8. What is the event loop in javascript? explain with a brief example.
+
+The event loop is a mechanism that enables asynchronous operations to be executed in a non-blocking manner. Understanding the event loop is essential for developing web applications because it underpins the asynchronous nature of JavaScript, which is fundamental for building responsive and efficient web applications.
